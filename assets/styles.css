@@ -1,0 +1,65 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    background-color: #0e0e10;
+}
+#wrapper-container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+#video-container {
+    flex: 1;
+    height: 100%;
+    background-color: black;
+    overflow: hidden;
+    min-width: 0;
+}
+#chat-container {
+    width: 341px; 
+    height: 100%;
+    background-color: black;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+#result {
+    margin-top: 10px;
+    color: black;
+    background-color: white;
+    padding: 10px;
+    border: 1px solid #ccc;
+    word-wrap: break-word; 
+}
+
+/* Portrait Mode */
+@media only screen and (orientation: portrait) {
+    #wrapper-container {
+        flex-direction: column;
+    }
+    #chat-container {
+        width: 100%;
+        height: 400px;
+    }
+    #video-container {
+        height: calc(100% - 400px);
+    }
+}
+
+/* Landscape Mode */
+@media only screen and (orientation: landscape) {
+    #wrapper-container {
+        flex-direction: row;
+    }
+    #chat-container {
+        width: 341px;
+    }
+}
